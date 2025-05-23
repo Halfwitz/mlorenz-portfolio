@@ -62,7 +62,8 @@ nunit-*.xml
 *.sln.docstates
 
 # Publish output
-publish/
+/output/
+/deploy.zip
 
 # Secrets
 .env
@@ -73,5 +74,8 @@ secrets.json
 Thumbs.db
 *.swp
 
-# Elastic Beanstalk
+# Elastic Beanstalk Files
 .elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
