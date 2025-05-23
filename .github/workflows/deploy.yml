@@ -1,0 +1,39 @@
+name: Deploy main 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          
+      - name: Publish .NET app 
+        run: |
+          dotnet publish portfolio-mvc/portfolio-mvc.csproj -c Release -o output
+          cp -r portfolio-mvc/.ebextensions output/
+          cp -r portfolio-mvc/.platform/ output/
+
+      - name: Generate deployment package
+        run: |
+          (cd output/ && zip -r ../deploy.zip .)
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v22
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: portfolio
+          environment_name: Portfolio-env
+          version_label: ${{ github.sha }}
+          region: us-east-2
+          deployment_package: deploy.zip
