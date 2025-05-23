@@ -53,5 +53,25 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
-# Elastic Beanstlak
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Publish output
+publish/
+
+# Secrets
+.env
+secrets.json
+
+# System
+.DS_Store
+Thumbs.db
+*.swp
+
+# Elastic Beanstalk
 .elasticbeanstalk/*
