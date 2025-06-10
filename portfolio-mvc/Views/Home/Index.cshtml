@@ -5,9 +5,62 @@
 <div id="intro" class="text-center">
     <h1 class="display-4">Hi. I'm Michael.</h1>
     <p>Welcome to my Portfolio! (Under Construction, Deployed with GitHub Actions)</p>
-    <section>
-        <h2>Projects</h2>
-        <p>(Coming Soon!)</p>        
-    </section>
-    
 </div>
+
+<section id="about-me">
+    <img class="about-me-image" src="selfportrait" alt="A portrait illustration representing me"/>
+    <div>
+        <h2 class="display-4">About Me</h2>
+        <p>
+           I'm Michael! I recently graduated from Southern New Hampshire University with a B.S in Computer Science.
+            I am an aspiring software developer aiming to explore many different avenues of development-whether it's full-stack web applications, desktop applications and utilities, games, backend development, or any other emerging fields, I am simply glad to be able to keep learning and improving.
+        </p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="display-4">Projects</h2>
+    
+    <div id="projects-container">
+        <article id="dayplanner-project" class="project-container">
+            <img class="project-image" src="project" alt="Thumbnail image for Day Planner project" />
+            <h3>Day Planner Application</h3>
+            <p>Here is a short blurb about Dayplanner</p>
+            <div class="project-skills-container">
+                <div class="project-links">
+                    <a class="project-link" href="/projects/day-planner">Learn More</a>
+                    <a class="project-link" href="https://github.com/Halfwitz/DayPlanner">GitHub</a>
+                </div>
+                <ul class="project-skills-list">
+                    <li class="project-skill"><img class="skill-icon-image" src="skill-icon" alt="icon for this skill"/>Java</li>
+                    <li class="project-skill"><img class="skill-icon-image" src="skill-icon" alt="icon for this skill"/>JavaFx</li>
+                    <li class="project-skill"><img class="skill-icon-image" src="skill-icon" alt="icon for this skill"/>Maven</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section id="contact-me">
+    <h2 class="display-4">Contact Me</h2>
+    <p>I'd love to get in touch! Please send me an email or find my socials using the buttons below. Also, you can use the form to send me a message, instead. I'm open to all communication and will respond as soon as possible!</p>
+    <div class="contact-buttons-container">
+        <a href="https://github.com/Halfwitz"><img class="contact-button-image" src="github-icon" alt="Visit my GitHub profile"/></a>
+        <a href="mailto:hello@mlorenz.dev?&subject=Let%27s%20Get%20In%20Touch%21"><img class="contact-button-image" src="email-icon" alt="Send me an email"/></a>
+        <a href="https://linkedin.com/in/michael-lorenz-dev"><img class="contact-button-image" src="linkedin-icon" alt="Visit my LinkedIn profile"/></a>
+    </div>
+    <form>
+        <label for="name" >Name?</label>
+        <input type="text" id="name" name="name"/>
+        
+        <label for="email" >Email?</label>
+        <input type="email" required id="email" name="email"/>
+        
+        <label for="message" >Message?</label>
+        <textarea required id="message" name="message"></textarea>
+        
+        <label for="submit" >Send Message</label>
+        <input type="submit" id="submit" name="submit"/>
+        
+    </form> 
+</section>
